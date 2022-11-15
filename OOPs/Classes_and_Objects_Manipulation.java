@@ -1,0 +1,20 @@
+package OOPs;
+
+ class Classes_and_Objects_Manipulation {
+    public static void main(String[] args) {
+
+    }
+}
+class Student {
+    // your class code goes here
+    String name;
+    int rollNumber;
+
+    public static Student myFunction (String name, int rollNumber){
+        // your function code goes here
+        Student s1 = new Student();
+        s1.name = name;
+        s1.rollNumber = rollNumber;
+        return s1;
+    }
+}

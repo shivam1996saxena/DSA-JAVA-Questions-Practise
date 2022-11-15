@@ -1,0 +1,89 @@
+package mock;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Mock4 {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 1, 3, 4, 2, 3};
+        int k = 4;
+        HashMap<Integer, Integer> hash = new HashMap<>();
+        for (int i = 0; i < k; i++) {
+            if (hash.containsKey(arr[i])) {
+                hash.put(arr[i], hash.get(arr[i]) + 1);
+            } else {
+                hash.put(arr[i], 1);
+            }
+        }
+        System.out.println(hash);
+        System.out.println("---");
+        System.out.print(hash.size() + " ");
+        int i = 1;
+        int j = k;
+        while (j < arr.length) {
+            if (hash.get(arr[i - 1]) > 1) {
+                hash.put(arr[i - 1], hash.get(arr[i - 1])-1);
+            } else {
+                hash.remove(arr[i - 1]);
+            }
+            if (hash.containsKey(arr[j])) {
+                hash.put(arr[j], hash.get(arr[j]) + 1);
+            } else {
+                hash.put(arr[j], 1);
+            }
+            i++;
+            j++;
+            System.out.println(hash);
+            System.out.println("---");
+            System.out.print(hash.size() + " ");
+        }
+    }
+}
+   /* static boolean isSumK(int[] arr, int k) {
+        int i = 0;
+        int j = i + 1;
+        int sum = arr[i];
+        while (i <= arr.length - 2) {
+            sum += arr[j];
+            if (sum == k) {
+                return true;
+            } else {
+                j++;
+            }
+            if (j == arr.length) {
+                i++;
+                j = i + 1;
+                sum = arr[i];
+            }
+        }
+        return false;
+    }
+    */
+
+/*Given an array of positive and negative numbers. Find if there is a subarray (of size at-least one) with 0 sum.
+
+Input:
+
+5
+
+4 2 -3 1 6
+
+Output:
+
+Yes
+
+2 -3 1
+*/
+/*Given an array of size N and an integer K, return the count of distinct numbers in all windows of size K.
+Input: arr[] = {1, 2, 1, 3, 4, 2, 3}, K = 4
+Output: 3 4 4 3
+
+1 2 1 3
+2 1 3 4
+1 3 4 2
+3 4 2 3
+*/
+
+
+
+
